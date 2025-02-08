@@ -39,7 +39,7 @@ def predict():
                 return render_template('index.html', prediction="Invalid numeric input for column: " + column)
 
     prediction = model.predict([features])[0]
-    return render_template('index.html', prediction=f'Prediction: {"Survived" if prediction == 1 else "Did not survive"}')
+    return render_template('predict.html', prediction=f'Prediction: {"Survived" if prediction == 1 else "Did not survive"}')
 
 if __name__ == "__main__":
     app.run(debug=True)
